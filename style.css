@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@font-face {
+    font-family: 'LCD font';
+    src: url('open_24_display_st-webfont.woff2') format('woff2'),
+         url('open_24_display_st-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(to right, #0000f6, #00fefe);
+}
+
+h1 {
+    text-align: center;
+    font-family: 'LCD font', monospace;
+    color: white;
+}
+
+.calculator-grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 50vh;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+.calculator-grid > button {
+    cursor: pointer;
+    font-size: 2rem;
+    padding: 10px 0;
+    border: 1px solid rgba(39, 39, 39, 0.60);
+    outline: none;
+    background-color:rgba(39, 39, 39, 1);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    color: white;
+}
+
+.calculator-grid > button:nth-child(17){
+    border-radius:0 0 0 20px;
+}
+
+.calculator-grid > button:nth-child(19){
+    border-radius:0 0 20px 0;
+}
+
+.calculator-grid > button:hover {
+    background-color: rgb(255, 60, 21);
+    color: black;
+}
+
+.span-two{
+    grid-column:span 2;
+}
+
+button.equals {
+    background-color:rgba(26, 26, 26, 1);
+    color: rgb(255, 60, 21);
+}
+
+button.operator {
+    background-color:rgba(26, 26, 26, 1);
+}
+
+.output {
+    grid-column: 1 / -1;
+    background-color:rgba(0,0,0,1);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 20px 10px;
+    word-wrap:break-word;
+    word-break: break-all;
+    font-family: 'LCD font', monospace;
+    border-radius:  20px 20px 0 0;
+}
+
+.output .previous-operand {
+    color: rgba(255, 255, 255, 0.70);
+    font-size: 1.2rem;
+}
+
+.output .current-operand {
+    color: white;
+    font-size: 3rem;
+}
